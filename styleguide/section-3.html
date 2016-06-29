@@ -56,26 +56,26 @@
               </a>
             </li>
             <li class="kss-nav__menu-item">
-              <a href="section-3.html#kssref-3-2">
-                <span class="kss-nav__ref ">3.2</span
-                ><span class="kss-nav__name">Hints</span>
-              </a>
-            </li>
-            <li class="kss-nav__menu-item">
               <a href="section-3.html#kssref-3-3">
                 <span class="kss-nav__ref ">3.3</span
-                ><span class="kss-nav__name">Errors</span>
+                ><span class="kss-nav__name">Disabled inputs</span>
               </a>
             </li>
             <li class="kss-nav__menu-item">
               <a href="section-3.html#kssref-3-4">
                 <span class="kss-nav__ref ">3.4</span
-                ><span class="kss-nav__name">Option set</span>
+                ><span class="kss-nav__name">Errors</span>
               </a>
             </li>
             <li class="kss-nav__menu-item">
               <a href="section-3.html#kssref-3-5">
                 <span class="kss-nav__ref ">3.5</span
+                ><span class="kss-nav__name">Option set</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-3.html#kssref-3-6">
+                <span class="kss-nav__ref ">3.6</span
                 ><span class="kss-nav__name">Horizontal option set</span>
               </a>
             </li>
@@ -127,8 +127,8 @@
 
 
       <div class="kss-description">
-        <p>Add <code>.cf-form-input</code> to all form elements to apply the styles.
-Textareas and inputs with type text/email/url/password get 100% width.</p>
+        <p>Add <code>.cf-form-input</code> to <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, or <code>&lt;select&gt;</code> elements
+to apply the styles.</p>
 
       </div>
     </div>
@@ -141,6 +141,9 @@ Textareas and inputs with type text/email/url/password get 100% width.</p>
           <div class="cf-form-field">
   <label>Name</label>
   <input type="text" value="Contentful!" class="cf-form-input">
+  <div class="cf-form-hint">
+    You have to provide your name here
+  </div>
 </div>
 <div class="cf-form-field">
   <label>Bio</label>
@@ -159,6 +162,9 @@ Textareas and inputs with type text/email/url/password get 100% width.</p>
         <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;cf-form-field&quot;&gt;
   &lt;label&gt;Name&lt;/label&gt;
   &lt;input type=&quot;text&quot; value=&quot;Contentful!&quot; class=&quot;cf-form-input&quot;&gt;
+  &lt;div class=&quot;cf-form-hint&quot;&gt;
+    You have to provide your name here
+  &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;cf-form-field&quot;&gt;
   &lt;label&gt;Bio&lt;/label&gt;
@@ -169,50 +175,6 @@ Textareas and inputs with type text/email/url/password get 100% width.</p>
     &lt;option value=&quot;value&quot;&gt;Value&lt;/option&gt;
     &lt;option value=&quot;more&quot;&gt;More&lt;/option&gt;
   &lt;/select&gt;
-&lt;/div&gt;</code></pre>
-      </div>
-
-      </section>
-      <section id="kssref-3-2" class="kss-section kss-section--depth-2">
-
-    <div class="kss-style">
-      <h2 class="kss-title kss-title--level-2">
-        <a class="kss-title__permalink" href="#kssref-3-2">
-          <span class="kss-title__ref">
-              3.2
-            <span class="kss-title__permalink-hash">
-                #permalink
-            </span>
-          </span>
-          Hints
-        </a>
-      </h2>
-
-
-    </div>
-
-      <div class="kss-modifier__wrapper">
-        <div class="kss-modifier__heading kss-style">
-          Example
-        </div>
-        <div class="kss-modifier__example">
-          <div class="cf-form-field">
-  <label>First Name</label>
-  <input type="text" class="cf-form-input">
-  <div class="cf-form-hint">
-    You have to provide your name here
-  </div>
-</div>
-        </div>
-      </div>
-
-      <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;cf-form-field&quot;&gt;
-  &lt;label&gt;First Name&lt;/label&gt;
-  &lt;input type=&quot;text&quot; class=&quot;cf-form-input&quot;&gt;
-  &lt;div class=&quot;cf-form-hint&quot;&gt;
-    You have to provide your name here
-  &lt;/div&gt;
 &lt;/div&gt;</code></pre>
       </div>
 
@@ -228,11 +190,15 @@ Textareas and inputs with type text/email/url/password get 100% width.</p>
                 #permalink
             </span>
           </span>
-          Errors
+          Disabled inputs
         </a>
       </h2>
 
 
+      <div class="kss-description">
+        <p>Disabled styles are applied when the selects <code>[aria-disabled=&quot;true&quot;]</code> or <code>:disabled</code> match.</p>
+
+      </div>
     </div>
 
       <div class="kss-modifier__wrapper">
@@ -242,8 +208,13 @@ Textareas and inputs with type text/email/url/password get 100% width.</p>
         <div class="kss-modifier__example">
           <div class="cf-form-field">
   <label>Name</label>
-  <input type="text" aria-invalid="true" class="cf-form-input cf-has-error">
-  <div class="cf-field-error">Something went wrong!</div>
+  <input type="text" aria-disabled="true" class="cf-form-input" value="Cannot edit :(">
+</div>
+<div class="cf-form-field">
+  <label>Select</label>
+  <select disabled class="cf-form-input">
+    <option>Value</option>
+  </select>
 </div>
         </div>
       </div>
@@ -251,8 +222,13 @@ Textareas and inputs with type text/email/url/password get 100% width.</p>
       <div class="kss-markup kss-style">
         <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;cf-form-field&quot;&gt;
   &lt;label&gt;Name&lt;/label&gt;
-  &lt;input type=&quot;text&quot; aria-invalid=&quot;true&quot; class=&quot;cf-form-input cf-has-error&quot;&gt;
-  &lt;div class=&quot;cf-field-error&quot;&gt;Something went wrong!&lt;/div&gt;
+  &lt;input type=&quot;text&quot; aria-disabled=&quot;true&quot; class=&quot;cf-form-input&quot; value=&quot;Cannot edit :(&quot;&gt;
+&lt;/div&gt;
+&lt;div class=&quot;cf-form-field&quot;&gt;
+  &lt;label&gt;Select&lt;/label&gt;
+  &lt;select disabled class=&quot;cf-form-input&quot;&gt;
+    &lt;option&gt;Value&lt;/option&gt;
+  &lt;/select&gt;
 &lt;/div&gt;</code></pre>
       </div>
 
@@ -264,6 +240,62 @@ Textareas and inputs with type text/email/url/password get 100% width.</p>
         <a class="kss-title__permalink" href="#kssref-3-4">
           <span class="kss-title__ref">
               3.4
+            <span class="kss-title__permalink-hash">
+                #permalink
+            </span>
+          </span>
+          Errors
+        </a>
+      </h2>
+
+
+      <div class="kss-description">
+        <p>Error styles are applied when the selects <code>[aria-invalid=&quot;true&quot;]</code> or <code>:invalid</code> match.</p>
+
+      </div>
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+          <div class="cf-form-field">
+  <label>Name</label>
+  <input type="text" aria-invalid="true" class="cf-form-input">
+  <div class="cf-field-error">Something went wrong!</div>
+</div>
+<div class="cf-form-field">
+  <label>Select</label>
+  <select aria-invalid="true" class="cf-form-input">
+    <option>Not the right value</option>
+  </select>
+</div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;cf-form-field&quot;&gt;
+  &lt;label&gt;Name&lt;/label&gt;
+  &lt;input type=&quot;text&quot; aria-invalid=&quot;true&quot; class=&quot;cf-form-input&quot;&gt;
+  &lt;div class=&quot;cf-field-error&quot;&gt;Something went wrong!&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;cf-form-field&quot;&gt;
+  &lt;label&gt;Select&lt;/label&gt;
+  &lt;select aria-invalid=&quot;true&quot; class=&quot;cf-form-input&quot;&gt;
+    &lt;option&gt;Not the right value&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-3-5" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-3-5">
+          <span class="kss-title__ref">
+              3.5
             <span class="kss-title__permalink-hash">
                 #permalink
             </span>
@@ -325,13 +357,13 @@ Textareas and inputs with type text/email/url/password get 100% width.</p>
       </div>
 
       </section>
-      <section id="kssref-3-5" class="kss-section kss-section--depth-2">
+      <section id="kssref-3-6" class="kss-section kss-section--depth-2">
 
     <div class="kss-style">
       <h2 class="kss-title kss-title--level-2">
-        <a class="kss-title__permalink" href="#kssref-3-5">
+        <a class="kss-title__permalink" href="#kssref-3-6">
           <span class="kss-title__ref">
-              3.5
+              3.6
             <span class="kss-title__permalink-hash">
                 #permalink
             </span>
