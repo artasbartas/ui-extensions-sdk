@@ -7,7 +7,7 @@ The API allows to create, update, delete and read custom extensions.
 The API documented here is utilized by the [`contentful-extension`][cf-extension-cli]
 command line tool which offers a more convenient way to manage extensions than using
 the API directly. The extension API documentation for actual extension development can be
-found [here](/doc/widget-api-frontend.md).
+found [here](/doc/ui-extensions-sdk-frontend.md).
 
 [cf-extension-cli]: https://github.com/contentful/contentful-extension-cli
 
